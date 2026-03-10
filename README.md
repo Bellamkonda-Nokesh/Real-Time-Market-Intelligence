@@ -1,17 +1,17 @@
 <div align="center">
   <img src="https://via.placeholder.com/150x150/6366f1/ffffff?text=Sentix" alt="Sentix Logo" width="120" height="120" />
-  <h1>Sentix — Real-Time Market Intelligence</h1>
-  <p><i>AI-powered market sentiment analysis, live news ingestion, & predictive forecasting in one beautiful dashboard.</i></p>
+  <h1>Sentix v2.0 — Real-Time Strategic Intelligence</h1>
+  <p><i>High-accuracy, blazing-fast, and visually stunning AI-powered market intelligence.</i></p>
   
-  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-  [![React](https://img.shields.io/badge/React-18.x-blueviolet)](https://reactjs.org/)
-  [![TailwindCSS](https://img.shields.io/badge/Tailwind-CSS-teal)](https://tailwindcss.com/)
-  [![Express.js](https://img.shields.io/badge/Express-Backend-lightgrey)](https://expressjs.com/)
+  [![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/)
+  [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-teal)](https://fastapi.tiangolo.com/)
+  [![TailwindCSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC)](https://tailwindcss.com/)
+  [![Vanilla JS](https://img.shields.io/badge/Vanilla-JS-F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 </div>
 
 <br />
 
-![Sentix Dashboard Preview](docs/dashboard.png)
+![Sentix Dashboard Preview](./docs/dashboard.png)
 
 ---
 
@@ -39,85 +39,73 @@ Sentix transforms paralyzing information overload into a sleek, dark-mode comman
 ## ✨ Dynamic Features
 
 ![Features Preview](./docs/features.png)
-
-- � **Mass News Ingestion**: Actively pulls 30+ simultaneous articles directly from [NewsAPI](https://newsapi.org) triggered by your custom search queries.
-- 🧠 **NLP Sentiment Engine**: VADER-inspired logic that computes confidence intervals and scores text as Positive, Negative, or Neutral.
-- 📉 **7-Day Predictive Forecasting**: Employs mathematical linear regression to forecast future market sentiment based on recent historical trajectories.
-- ☁️ **Trending Word Cloud**: Real-time extraction of the most frequently mentioned keywords across all processed news, scaled dynamically in a beautiful hover-animated cloud.
-- 🚨 **Watchlist Alerts**: Monitor specific tickers or entities (e.g. "OpenAI" or "Tesla"). Set custom sentiment thresholds and get alerted when public perception shifts.
-- 🎭 **Smooth Framer Motion Interactions**: A highly responsive, animated UI where cards glide, charts sequence into view, and feeds update gracefully without harsh screen stutters.
-- 📊 **CSV Bulk Export**: Downstream your raw scraped data and sentiment values directly into a spreadsheet for secondary modeling.
-- 🌓 **Adaptive Theming**: Seamless transitioning between a stunning dark mode (Glassmorphism borders) and a clean light mode.
+Built to analyze without the clutter. Uncover biases with our custom NLP engine, track multiple sources, and leverage the **Watchlist Alerts** to monitor your specific corporate portfolio.
 
 ---
 
-## 🛠 Tech Stack
+## 💻 Technical Architecture (v2.0)
 
-Sentix is built using a modern, type-safe, and highly scalable stack:
+Sentix v2.0 optimizes for absolute performance and simplicity, replacing heavy frameworks with a lean, blazing-fast stack perfect for a unified showcase.
 
-**Frontend Ecosystem**
-- **React 18** & **TypeScript** — Core framework
-- **Vite** — Lightning-fast build tooling
-- **Framer Motion** — Physics-based fluid animations
-- **Tailwind CSS v3** — Utility-first styling & Glassmorphism effects
-- **TanStack Query (React Query)** — Server-state management & caching
-- **Recharts** — Responsive, composable SVG charting
-- **Lucide React** — Crisp, beautiful iconography
+**🎨 Frontend (Glass Intelligence SPA)**
+- **Vanilla JavaScript**: Zero framework overhead, utilizing a highly optimized Single Page App (SPA) architecture.
+- **Tailwind CSS**: Rapid, scalable utility-first styling powering the exact glassmorphism and neumorphism hybrid effects.
+- **GSAP & CSS Transitions**: Supplying physics-based, fluid micro-animations on interactive card hovers and chart loads.
+- **Chart.js**: Lightweight and highly customizable responsive SVG/Canvas charting.
+- **Phosphor Icons & Inter Font**: Crisp, readable typography and professional iconography.
 
-**Backend & Infrastructure**
-- **Express.js (Node)** — High-performance REST API routing
-- **PostgreSQL 16** — Robust relational database
-- **Drizzle ORM** — Type-safe SQL schema & queries
-- **bcryptjs** — Secure credential hashing
-- **NewsAPI** — External data sourcing for global headlines
+**⚙️ Backend (The NLP Engine)**
+- **FastAPI**: Handling API requests 3x faster than traditional Flask, complete with automatic OpenAPI documentation.
+- **SQLite (WAL Mode)**: Production-hardened, zero-config single file database optimized specifically for concurrent read/write scaling.
+- **Python (NLTK)**: Pydantic validation ensures strict type safety while NLTK handles high-precision natural language processing.
+- **Async/Await I/O**: Efficiently handles multiple simultaneous NewsAPI streams without blocking the thread.
 
 ---
 
-## � Getting Started
+## 🚀 Getting Started
 
-Want to run Sentix locally? Follow these steps:
+Deploying your own instance of Sentix v2.0 is designed to be completely infrastructure-free.
 
 ### Prerequisites
-- Node.js 18+
-- PostgreSQL 16+
-- A free [NewsAPI key](https://newsapi.org/register)
+- Python 3.7+
+- Free API Key from [NewsAPI](https://newsapi.org/register)
 
-### 1. Clone & Install
-```bash
-git clone https://github.com/yourusername/sentix.git
-cd sentix
-npm install
-```
+### Installation
 
-### 2. Configure Environment
-Copy the `.env.example` to `.env` and fill in your secrets:
-```bash
-cp .env.example .env
-```
-Ensure your `.env` contains:
-```env
-DATABASE_URL=postgresql://postgres:yourpassword@localhost:5432/sentix_db
-NEWS_API_KEY=your_newsapi_key_here
-PORT=5000
-NODE_ENV=development
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/sentix.git
+   cd sentix
+   ```
 
-### 3. Initialize Database
-Push the Drizzle schema to your local PostgreSQL instance:
-```bash
-npm run db:push
-```
+2. **Set up Virtual Environment**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
 
-### 4. Boot the Engines
-Start the backend server and frontend Vite runtime concurrently:
-```bash
-npm run dev
-```
-> Navigate to **[http://localhost:5000](http://localhost:5000)** and create a free account to begin analyzing the market!
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Configure the Environment**
+   Set up your `.env` file with your credentials:
+   ```env
+   NEWS_API_KEY=your_newsapi_key
+   SLACK_WEBHOOK_URL=your_optional_slack_webhook
+   DATABASE_URL=sqlite:///./intelligence.db?mode=ro
+   ```
+
+5. **Spin up the FastAPI Engine**
+   ```bash
+   uvicorn app.main:app --reload
+   ```
+   > Head to **[http://localhost:8000](http://localhost:8000)** to launch your dashboard. Interactive API documentation is auto-generated at `/docs`.
 
 ---
 
 <div align="center">
-  <p>&copy; 2026 Sentix by Nokesh Bellamkonda. All rights reserved.</p>
-  <p>Built with ❤️ and Data.</p>
+  <p><b>Built to transform information overload into an intelligence advantage.</b></p>
+  <p>&copy; 2026 Real-Time Strategic Intelligence by Rajath M S. All rights reserved.</p>
 </div>
