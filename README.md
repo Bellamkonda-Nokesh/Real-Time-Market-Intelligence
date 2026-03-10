@@ -1,129 +1,172 @@
 <div align="center">
-  <img src="https://via.placeholder.com/150x150/6366f1/ffffff?text=Sentix" alt="Sentix Logo" width="120" height="120" />
-  <h1>Sentix v2.0 — Real-Time Strategic Intelligence</h1>
-  <p><i>High-accuracy, blazing-fast, and visually stunning AI-powered market intelligence.</i></p>
-  
-  [![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/)
-  [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-teal)](https://fastapi.tiangolo.com/)
-  [![TailwindCSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC)](https://tailwindcss.com/)
-  [![Vanilla JS](https://img.shields.io/badge/Vanilla-JS-F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+<img src="https://via.placeholder.com/80x80/6366f1/ffffff?text=⚡" width="80" height="80" />
+
+# SENTIX v2.0
+
+### *Real-Time Strategic Market Intelligence*
+
+> **Transform the firehose of global financial news into sharp, actionable insights — instantly.**
+
+[![Python](https://img.shields.io/badge/Python-3.7+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![NLTK](https://img.shields.io/badge/NLTK-NLP_Engine-4CAF50?style=for-the-badge)](https://www.nltk.org/)
+[![SQLite](https://img.shields.io/badge/SQLite-WAL_Mode-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![License](https://img.shields.io/badge/License-MIT-gold?style=for-the-badge)](./LICENSE)
+
 </div>
 
-<br />
+---
 
-<div align="center">
-  <!-- Image 1: Landing Page -->
-  ![Sentix Landing Page](./docs/landing.png)
-  <br />
-  <i>Transforming the firehose of global financial news into actionable, real-time insights with a production-ready "Glass Intelligence" architecture.</i>
-</div>
+## 🖼️ Platform Preview
+
+### Landing Page — *Where Intelligence Begins*
+
+![Sentix Landing Page](./landing.png)
+
+> A bold, glassmorphism-styled hero section designed for instant clarity. One platform. One mission: know the market before it moves.
 
 ---
 
-## ⚡ Executive Summary
+### Feature Suite — *Everything You Need to Stay Ahead*
 
-**Sentix v2.0** (Real-Time Industry Insight & Strategic Intelligence System) is an autonomous intelligence platform that reads the news so you don't have to. Evolving from a Flask-based academic prototype into a polished, production-ready web application, it features zero-downtime reliability, lightning-fast initial loads (< 2s), and a modern glassmorphism UI running smooth 60fps animations.
+![Sentix Features Grid](./features.png)
 
-<details open>
-<summary><b>✨ Core Intelligence Capabilities</b></summary>
-<br>
-
-- 🌐 **Real-Time News Feed**: Actively fetches and filters live articles using NewsAPI. Supports advanced search by keyword, topic, or sentiment.
-- 🧠 **NLTK Sentiment Analysis**: High-accuracy NLP engine that instantly scores every headline and article (Positive, Negative, Neutral) with precision confidence intervals.
-- 📈 **Trend Forecasting**: Visual trend analysis employing Chart.js to map sentiment volume and trajectory over 7-day timelines.
-- ☁️ **Trending Word Cloud**: Real-time extraction of the most frequently mentioned keywords across all processed news stories.
-- 🚨 **Real-Time Slack Alerts**: Webhook integration to immediately notify you of significant sentiment shifts on monitored entities.
-- 📊 **Data Export (CSV/JSON)**: Downstream your raw scraped data and sentiment values directly into secondary modeling engines.
-
-</details>
+> Six production-grade intelligence modules — from multi-source news ingestion and AI sentiment scoring to live analysis and watchlist alerts — available out of the box.
 
 ---
 
-## 📸 Platform Tour
+### Market Overview Dashboard — *Your Command Center*
 
-Immerse yourself in our "Glass Intelligence" UI design, featuring frosted glass cards, smooth GSAP transitions, and adaptive deep indigo themes.
+![Sentix Dashboard](./dashboard.png)
 
-### 1. Comprehensive Feature Set
-> *Everything you need to stay ahead: A complete platform for market intelligence, from raw news to actionable insights.*
-
-<!-- Image 2: Features Grid -->
-![Sentix Features](./docs/features.png)
-
-Explore our core capabilities out-of-the-box. Sentix offers **Multi-Source News** ingestion, deep **AI Sentiment Analysis** computing instant positivity, and mathematically backed **7-Day Forecasting**. Ensure you know exactly who's spinning the story using the **Source Leaderboard**, test any text instantly with the **Live Analyzer**, and get pinged precisely when sentiment drops via **Watchlist Alerts**.
-
-### 2. The Command Center (Market Overview)
-> *AI-powered real-time sentiment intelligence dashboard.*
-
-<!-- Image 3: Dashboard Overview -->
-![Market Overview](./docs/dashboard.png)
-
-Get an immediate pulse on the market. View the total articles processed today, the live aggregate sentiment (-1 to +1 scale), bullish signals, and active watchlists. Monitor the **30-Day Sentiment Trend** line chart and the visual **Market Gauge** that breaks down the market directly into Positive, Neutral, and Negative segments.
+> A real-time intelligence hub displaying live sentiment scores, bullish signals, 30-day trend charts, and a visual market gauge — all in one unified view.
 
 ---
 
-## 💻 Technical Architecture (v2.0)
+## ⚡ What Is Sentix?
 
-Sentix v2.0 optimizes for absolute performance and simplicity, replacing heavy frameworks with a lean, blazing-fast stack perfect for a unified showcase.
+**Sentix v2.0** is an autonomous AI-powered market intelligence platform that reads, scores, and forecasts the news for you. Built atop a lean FastAPI + NLTK stack, it ingests live articles from NewsAPI, applies VADER-inspired NLP sentiment scoring, and renders everything through a silky-smooth glassmorphism SPA — no heavy frameworks, just raw performance.
 
-**🎨 Frontend (Glass Intelligence SPA)**
-- **Vanilla JavaScript**: Zero framework overhead, utilizing a highly optimized Single Page App (SPA) architecture.
-- **Tailwind CSS**: Rapid, scalable utility-first styling powering the exact glassmorphism and neumorphism hybrid effects.
-- **GSAP & CSS Transitions**: Supplying physics-based, fluid micro-animations on interactive card hovers and chart loads.
-- **Chart.js**: Lightweight and highly customizable responsive SVG/Canvas charting.
-- **Phosphor Icons & Inter Font**: Crisp, readable typography and professional iconography.
+| Metric | Value |
+|---|---|
+| ⚡ Initial Load | `< 2 seconds` |
+| 🎯 Sentiment Precision | VADER-calibrated confidence intervals |
+| 📡 News Latency | Real-time via NewsAPI |
+| 🗄️ Database | SQLite WAL Mode (zero-config, concurrent R/W) |
+| 🖥️ Frontend | Vanilla JS SPA — zero framework overhead |
 
-**⚙️ Backend (The NLP Engine)**
-- **FastAPI**: Handling API requests 3x faster than traditional Flask, complete with automatic OpenAPI documentation.
-- **SQLite (WAL Mode)**: Production-hardened, zero-config single file database optimized specifically for concurrent read/write scaling.
-- **Python (NLTK)**: Pydantic validation ensures strict type safety while NLTK handles high-precision natural language processing.
-- **Async/Await I/O**: Efficiently handles multiple simultaneous NewsAPI streams without blocking the thread.
+---
+
+## 🧠 Core Intelligence Modules
+
+| Module | Description |
+|---|---|
+| 🌐 **Multi-Source News** | Fetches & filters live articles by keyword, topic, or sentiment in real time |
+| 🤖 **AI Sentiment Analysis** | VADER-inspired NLP engine scores every headline: Positive / Neutral / Negative |
+| 📈 **7-Day Forecasting** | Linear regression trend prediction with confidence intervals |
+| 📊 **Source Leaderboard** | Tracks which outlets skew bullish or bearish — weight your data accordingly |
+| ⚡ **Live Analyzer** | Paste any text, get instant sentiment scoring + historical tracking |
+| 🚨 **Watchlist Alerts** | Monitor companies or entities; get Slack-pinged on sentiment shifts |
+| ☁️ **Trending Word Cloud** | Real-time keyword extraction across all processed stories |
+| 📥 **Data Export** | CSV / JSON export into downstream modeling pipelines |
+
+---
+
+## 🏗️ Technical Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    SENTIX v2.0 STACK                        │
+├────────────────────────┬────────────────────────────────────┤
+│     FRONTEND (SPA)     │         BACKEND (Engine)           │
+│                        │                                    │
+│  Vanilla JS            │  FastAPI  (3x faster than Flask)   │
+│  Tailwind CSS          │  Python + NLTK (NLP Sentiment)     │
+│  GSAP Animations       │  SQLite WAL (Concurrent R/W)       │
+│  Chart.js              │  Async/Await I/O                   │
+│  Phosphor Icons        │  Pydantic Validation               │
+│  Inter Font            │  NewsAPI + Slack Webhook           │
+└────────────────────────┴────────────────────────────────────┘
+```
 
 ---
 
 ## 🚀 Getting Started
 
-Deploying your own instance of Sentix v2.0 is designed to be completely infrastructure-free.
-
 ### Prerequisites
-- Python 3.7+
-- Free API Key from [NewsAPI](https://newsapi.org/register)
+- Python `3.7+`
+- A free API key from [NewsAPI](https://newsapi.org/register)
 
-### Installation
+### 1. Clone & Setup
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/sentix.git
-   cd sentix
-   ```
+```bash
+git clone https://github.com/yourusername/sentix.git
+cd sentix
+python -m venv venv
+source venv/bin/activate        # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
 
-2. **Set up Virtual Environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
+### 2. Configure Environment
 
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+Create a `.env` file in the root directory:
 
-4. **Configure the Environment**
-   Set up your `.env` file with your credentials:
-   ```env
-   NEWS_API_KEY=your_newsapi_key
-   SLACK_WEBHOOK_URL=your_optional_slack_webhook
-   DATABASE_URL=sqlite:///./intelligence.db?mode=ro
-   ```
+```env
+NEWS_API_KEY=your_newsapi_key_here
+SLACK_WEBHOOK_URL=your_optional_slack_webhook
+DATABASE_URL=sqlite:///./intelligence.db
+```
 
-5. **Spin up the FastAPI Engine**
-   ```bash
-   uvicorn app.main:app --reload
-   ```
-   > Head to **[http://localhost:8000](http://localhost:8000)** to launch your dashboard. Interactive API documentation is auto-generated at `/docs`.
+### 3. Launch
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Open **[http://localhost:8000](http://localhost:8000)** — your dashboard is live.
+Auto-generated API docs available at **[http://localhost:8000/docs](http://localhost:8000/docs)**.
+
+---
+
+## 📁 Project Structure
+
+```
+sentix/
+├── app/
+│   ├── main.py            # FastAPI entry point
+│   ├── models.py          # Pydantic schemas
+│   ├── sentiment.py       # NLTK/VADER NLP engine
+│   ├── news.py            # NewsAPI ingestion layer
+│   └── alerts.py          # Slack webhook integration
+├── static/
+│   ├── index.html         # SPA shell
+│   ├── app.js             # Vanilla JS SPA logic
+│   └── style.css          # Tailwind + glassmorphism
+├── intelligence.db        # SQLite WAL database
+├── requirements.txt
+└── .env
+```
+
+---
+
+## 🗺️ Roadmap
+
+- [ ] GPT-4 powered article summarization
+- [ ] Portfolio sentiment correlation scoring
+- [ ] Multi-language support (EN, DE, ZH)
+- [ ] Redis caching for sub-100ms API responses
+- [ ] Docker Compose one-command deployment
 
 ---
 
 <div align="center">
-  <p><b>Built to transform information overload into an intelligence advantage.</b></p>
-  <p>&copy; 2026 Real-Time Strategic Intelligence by Rajath M S. All rights reserved.</p>
+
+**Built to transform information overload into an intelligence advantage.**
+
+*© 2026 Sentix — Real-Time Strategic Intelligence by Rajath M S. All rights reserved.*
+
+⭐ Star this repo if Sentix adds value to your workflow.
+
 </div>
