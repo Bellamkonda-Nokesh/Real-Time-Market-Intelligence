@@ -31,7 +31,7 @@
 
 ### Feature Suite — *Everything You Need to Stay Ahead*
 
-![Sentix Features Grid](./features.png)
+![Sentix Features Grid](docs/features.png)
 
 > Six production-grade intelligence modules — from multi-source news ingestion and AI sentiment scoring to live analysis and watchlist alerts — available out of the box.
 
@@ -39,7 +39,7 @@
 
 ### Market Overview Dashboard — *Your Command Center*
 
-![Sentix Dashboard](./dashboard.png)
+![Sentix Dashboard](docs/dashboard.png)
 
 > A real-time intelligence hub displaying live sentiment scores, bullish signals, 30-day trend charts, and a visual market gauge — all in one unified view.
 
