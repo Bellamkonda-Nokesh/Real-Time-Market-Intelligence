@@ -23,7 +23,7 @@
 
 ### Landing Page — *Where Intelligence Begins*
 
-![Sentix Landing Page](./landing.png)
+![Sentix Landing Page](docs/landing.png)
 
 > A bold, glassmorphism-styled hero section designed for instant clarity. One platform. One mission: know the market before it moves.
 
