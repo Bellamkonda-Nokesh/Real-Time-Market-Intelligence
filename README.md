@@ -164,7 +164,7 @@ sentix/
 
 **Built to transform information overload into an intelligence advantage.**
 
-*© 2026 Sentix — Real-Time Strategic Intelligence by Rajath M S. All rights reserved.*
+*© 2026 Sentix — Real-Time Strategic Intelligence by Nokesh Bellamkonda. All rights reserved.*
 
 ⭐ Star this repo if Sentix adds value to your workflow.
 
