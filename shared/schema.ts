@@ -1,7 +1,19 @@
-import { pgTable, text, serial, integer, timestamp, real } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, integer, timestamp, real, boolean } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
+// ── Users ──────────────────────────────────────────────────────────
+export const users = pgTable("users", {
+  id: serial("id").primaryKey(),
+  email: text("email").notNull().unique(),
+  password: text("password").notNull(),        // bcrypt hash
+  fullName: text("full_name").notNull(),
+  avatarInitials: text("avatar_initials"),
+  createdAt: timestamp("created_at").defaultNow(),
+  isActive: boolean("is_active").default(true),
+});
+
+// ── Articles ───────────────────────────────────────────────────────
 export const articles = pgTable("articles", {
   id: serial("id").primaryKey(),
   title: text("title").notNull(),
@@ -16,6 +28,7 @@ export const articles = pgTable("articles", {
   keywords: text("keywords").array(),
 });
 
+// ── Watchlists ─────────────────────────────────────────────────────
 export const watchlists = pgTable("watchlists", {
   id: serial("id").primaryKey(),
   companyName: text("company_name").notNull(),
@@ -24,6 +37,7 @@ export const watchlists = pgTable("watchlists", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+// ── Sentiment History ──────────────────────────────────────────────
 export const sentimentHistory = pgTable("sentiment_history", {
   id: serial("id").primaryKey(),
   date: text("date").notNull(), // Stored as YYYY-MM-DD
@@ -34,10 +48,26 @@ export const sentimentHistory = pgTable("sentiment_history", {
   neutralCount: integer("neutral_count"),
 });
 
+// ── Zod schemas ────────────────────────────────────────────────────
+export const insertUserSchema = createInsertSchema(users).omit({ id: true, createdAt: true, avatarInitials: true, isActive: true });
 export const insertArticleSchema = createInsertSchema(articles).omit({ id: true, fetchedAt: true });
 export const insertWatchlistSchema = createInsertSchema(watchlists).omit({ id: true, createdAt: true });
 export const insertSentimentHistorySchema = createInsertSchema(sentimentHistory).omit({ id: true });
 
+export const loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(1),
+});
+
+export const registerSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(6, "Password must be at least 6 characters"),
+  fullName: z.string().min(2, "Full name is required"),
+});
+
+// ── Types ──────────────────────────────────────────────────────────
+export type User = typeof users.$inferSelect;
+export type InsertUser = z.infer<typeof insertUserSchema>;
 export type Article = typeof articles.$inferSelect;
 export type InsertArticle = z.infer<typeof insertArticleSchema>;
 export type Watchlist = typeof watchlists.$inferSelect;

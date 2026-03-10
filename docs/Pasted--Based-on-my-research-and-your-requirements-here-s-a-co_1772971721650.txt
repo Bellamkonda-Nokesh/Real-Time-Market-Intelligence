@@ -1,0 +1,496 @@
+ Based on my research and your requirements, here's a comprehensive **Product Requirements Document (PRD)** for your upgraded project:
+
+---
+
+# 📋 Product Requirements Document (PRD)
+
+## Real-Time Industry Insight & Strategic Intelligence System v2.0
+
+**Version:** 2.0  
+**Date:** March 2025  
+**Author:** Rajath M S  
+**Status:** Student Project - Production Ready  
+**Goal:** High-accuracy, fast, visually stunning intelligence platform
+
+---
+
+## 1. Executive Summary
+
+Transform the existing Flask-based academic project into a **polished, production-ready web application** featuring modern UI/UX design, optimized performance, and enhanced reliability while maintaining simplicity suitable for a student project showcase.
+
+---
+
+## 2. Objectives & Success Criteria
+
+| Objective | Success Metric |
+|-----------|---------------|
+| **Zero-downtime reliability** | 99.9% uptime, graceful error handling |
+| **Lightning-fast performance** | < 2s initial load, < 500ms API responses |
+| **Stunning visual design** | Modern glassmorphism/neumorphism UI, 60fps animations |
+| **Mobile-responsive** | Perfect functionality on all devices |
+| **Accurate intelligence** | >85% sentiment accuracy, real-time updates |
+| **Student-project scope** | Single deployable unit, no complex infrastructure |
+
+---
+
+## 3. Technical Architecture
+
+### 3.1 Stack Selection (Optimized for Simplicity + Performance)
+
+| Layer | Technology | Justification |
+|-------|-----------|---------------|
+| **Backend** | **FastAPI** (replaces Flask) | 3x faster, automatic API docs, async support  |
+| **Database** | **SQLite** (production-hardened) | Single file, zero config, sufficient for student scale  |
+| **Frontend** | **Vanilla JS + SPA architecture** | No framework overhead, full control, fast  |
+| **Styling** | **Tailwind CSS** | Rapid development, consistent design system |
+| **Charts** | **Chart.js** | Lightweight, beautiful, easy to customize  |
+| **Animations** | **GSAP + CSS transitions** | 60fps performance, professional feel |
+| **Icons** | **Phosphor Icons** | Modern, consistent iconography |
+| **Fonts** | **Inter + JetBrains Mono** | Highly readable, professional aesthetic |
+
+### 3.2 Why FastAPI over Flask?
+
+- **Performance**: 3x faster request handling 
+- **Type Safety**: Pydantic validation prevents runtime errors
+- **Auto Documentation**: `/docs` endpoint generates interactive API docs
+- **Async/Await**: Handle multiple NewsAPI calls concurrently
+- **Modern Python**: Built for Python 3.7+ with latest features
+
+### 3.3 SQLite Production Configuration
+
+```python
+# Optimized SQLite for concurrent reads
+DATABASE_URL = "sqlite:///./intelligence.db?mode=ro"  # Read-only mode for queries
+# Write operations use separate connection with WAL mode
+```
+
+**Optimizations** :
+- WAL (Write-Ahead Logging) mode for concurrent read/write
+- Connection pooling with `sqlite3` thread safety
+- Indexed columns: `timestamp`, `sentiment_score`, `company_name`
+- JSON column support for flexible metadata storage
+
+---
+
+## 4. UI/UX Design System
+
+### 4.1 Design Philosophy: "Glass Intelligence"
+
+**Visual Style**: Glassmorphism + Neumorphism hybrid 
+- **Transparency**: Frosted glass cards (`backdrop-filter: blur(20px)`)
+- **Depth**: Soft shadows, layered floating elements
+- **Motion**: Purposeful micro-interactions, 60fps animations
+- **Clarity**: High contrast text, accessible color ratios
+
+### 4.2 Color Palette
+
+| Role | Color | Hex | Usage |
+|------|-------|-----|-------|
+| **Primary** | Deep Indigo | `#4F46E5` | Buttons, active states, links |
+| **Secondary** | Cyan | `#06B6D4` | Charts, highlights, accents |
+| **Success** | Emerald | `#10B981` | Positive sentiment, success states |
+| **Warning** | Amber | `#F59E0B` | Neutral sentiment, alerts |
+| **Danger** | Rose | `#F43F5E` | Negative sentiment, errors |
+| **Background** | Slate 50 | `#F8FAFC` | Page background |
+| **Surface** | White/90% | `rgba(255,255,255,0.9)` | Glass cards |
+| **Text** | Slate 900 | `#0F172A` | Primary text |
+| **Text Muted** | Slate 500 | `#64748B` | Secondary text |
+
+### 4.3 Typography
+
+- **Headings**: Inter, 600-700 weight, tight letter-spacing
+- **Body**: Inter, 400 weight, 1.6 line-height
+- **Monospace**: JetBrains Mono for data/timestamps
+- **Scale**: Major Third (1.250) ratio for harmonious sizing
+
+### 4.4 Card Component Specifications
+
+**Glass Card Design**:
+```css
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  box-shadow: 
+    0 8px 32px rgba(31, 38, 135, 0.07),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 20px 40px rgba(31, 38, 135, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+}
+```
+
+---
+
+## 5. Feature Requirements
+
+### 5.1 Core Features (MVP)
+
+| ID | Feature | Description | Priority |
+|----|---------|-------------|----------|
+| F1 | **Real-time Dashboard** | Live sentiment visualization with auto-refresh | P0 |
+| F2 | **News Feed** | Filterable, searchable article list with sentiment badges | P0 |
+| F3 | **Sentiment Analysis** | NLTK-based analysis with confidence scores | P0 |
+| F4 | **Trend Charts** | Line charts showing sentiment over time (Chart.js) | P0 |
+| F5 | **Word Cloud** | Visual representation of key terms | P0 |
+| F6 | **Slack Alerts** | Webhook integration for significant changes | P1 |
+| F7 | **Data Export** | CSV/JSON export of analysis results | P1 |
+
+### 5.2 Enhanced Features (v2.0)
+
+| ID | Feature | Description | Priority |
+|----|---------|-------------|----------|
+| F8 | **User Authentication** | JWT-based login/signup with secure sessions | P0 |
+| F9 | **Personal Watchlists** | Save favorite companies/topics per user | P1 |
+| F10 | **Comparative Analysis** | Side-by-side competitor sentiment comparison | P1 |
+| F11 | **AI Insights** | Gemini API integration for summary generation | P1 |
+| F12 | **Dark Mode** | Toggle between light/dark themes | P2 |
+| F13 | **Responsive Mobile App** | PWA support for mobile devices | P2 |
+| F14 | **Keyboard Shortcuts** | Power-user navigation (e.g., `/` to search) | P2 |
+
+---
+
+## 6. Page Specifications
+
+### 6.1 Landing Page (Public)
+
+**Purpose**: Project showcase and login gateway
+
+**Sections**:
+1. **Hero**: Animated gradient background, project title, live demo stats
+2. **Features Grid**: 3x2 grid of feature cards with hover animations
+3. **Live Preview**: Real-time mini dashboard (public data)
+4. **Tech Stack**: Icon grid showing technologies used
+5. **Login/Signup**: Modal forms with glass effect
+
+**Animations**:
+- Hero text: Staggered fade-in on load
+- Cards: Floating animation (subtle up/down motion)
+- Stats: Count-up animation from 0
+
+### 6.2 Dashboard (Authenticated)
+
+**Layout**: Sidebar + Main Content
+
+**Sidebar** (Collapsible on mobile):
+- Logo/Brand
+- Navigation: Dashboard, News Feed, Analytics, Settings
+- User profile mini-card
+- Theme toggle
+
+**Main Content Grid**:
+```
+┌─────────────────────────────────────────┐
+│  KPI Cards Row (4 cards)                │
+│  [Sentiment] [Articles] [Trend] [Alerts]│
+├─────────────────────┬───────────────────┤
+│  Sentiment Chart    │   Trending Topics │
+│  (Line chart)       │   (Word cloud)    │
+├─────────────────────┴───────────────────┤
+│  Recent News Feed   │   Quick Actions   │
+│  (Scrollable list)  │   (Buttons)       │
+└─────────────────────────────────────────┘
+```
+
+**Interactive Elements**:
+- **KPI Cards**: Flip on hover to show detailed breakdown
+- **Charts**: Click data points to filter news feed
+- **News Items**: Swipeable on mobile, hover preview on desktop
+- **Real-time Badge**: Pulsing dot when live updates active
+
+### 6.3 Analytics Page
+
+**Features**:
+- Date range selector (custom picker)
+- Company comparison tool (multi-select)
+- Sentiment distribution pie chart
+- Volume vs. Sentiment scatter plot
+- Exportable reports (PDF generation)
+
+### 6.4 News Feed Page
+
+**Features**:
+- Advanced filters: Date, Sentiment, Source, Keywords
+- Sort options: Relevance, Date, Sentiment
+- Infinite scroll pagination
+- Save/bookmark articles
+- Share to Slack/email
+
+---
+
+## 7. Performance Requirements
+
+### 7.1 Speed Targets
+
+| Metric | Target | Measurement |
+|--------|--------|-------------|
+| First Contentful Paint (FCP) | < 1.5s | Lighthouse |
+| Time to Interactive (TTI) | < 3s | Lighthouse |
+| API Response Time (p95) | < 500ms | Server logs |
+| Database Query Time | < 100ms | SQLite profiler |
+| Animation Frame Rate | 60fps | Chrome DevTools |
+
+### 7.2 Optimization Strategies
+
+**Backend**:
+- Async database queries with `aiosqlite`
+- Connection pooling (max 10 connections)
+- Response caching with `fastapi-cache` (Redis-like in-memory)
+- Compression middleware (gzip/brotli)
+
+**Frontend**:
+- Lazy loading for below-fold content
+- Image optimization (WebP format, lazy loading)
+- Code splitting by route
+- Service Worker for offline caching
+- Debounced search inputs (300ms delay)
+
+**Database**:
+- Indexed columns for frequent queries
+- Query result caching (5-minute TTL)
+- Batch inserts for news ingestion
+- WAL mode for concurrent access 
+
+---
+
+## 8. Data Architecture
+
+### 8.1 Database Schema (SQLite)
+
+```sql
+-- Users table
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT UNIQUE NOT NULL,
+    hashed_password TEXT NOT NULL,
+    full_name TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    is_active BOOLEAN DEFAULT 1
+);
+
+-- News articles
+CREATE TABLE articles (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    content TEXT,
+    source TEXT,
+    url TEXT UNIQUE,
+    published_at TIMESTAMP,
+    fetched_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    raw_sentiment REAL,
+    processed_sentiment REAL,
+    sentiment_label TEXT CHECK(sentiment_label IN ('positive', 'negative', 'neutral')),
+    keywords TEXT -- JSON array
+);
+
+-- User watchlists
+CREATE TABLE watchlists (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES users(id),
+    company_name TEXT NOT NULL,
+    keywords TEXT,
+    alert_threshold REAL DEFAULT 0.2,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Sentiment history (for charts)
+CREATE TABLE sentiment_history (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    date DATE NOT NULL,
+    avg_sentiment REAL,
+    article_count INTEGER,
+    positive_count INTEGER,
+    negative_count INTEGER,
+    neutral_count INTEGER
+);
+
+-- Indexes for performance
+CREATE INDEX idx_articles_date ON articles(published_at);
+CREATE INDEX idx_articles_sentiment ON articles(sentiment_label);
+CREATE INDEX idx_sentiment_history_date ON sentiment_history(date);
+```
+
+### 8.2 API Endpoints (FastAPI)
+
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| POST | `/auth/login` | JWT token generation | Public |
+| POST | `/auth/signup` | User registration | Public |
+| GET | `/dashboard/stats` | KPI metrics | Required |
+| GET | `/articles` | List articles (paginated) | Required |
+| GET | `/articles/{id}` | Single article details | Required |
+| GET | `/sentiment/timeline` | Time-series data for charts | Required |
+| GET | `/sentiment/distribution` | Pie chart data | Required |
+| POST | `/watchlists` | Create watchlist | Required |
+| GET | `/watchlists` | List user watchlists | Required |
+| GET | `/insights/generate` | AI-generated summary | Required |
+| POST | `/alerts/test` | Test Slack webhook | Required |
+
+---
+
+## 9. Security Requirements
+
+### 9.1 Authentication & Authorization
+
+- **JWT Tokens**: Access token (15 min expiry) + Refresh token (7 days)
+- **Password Hashing**: bcrypt with salt rounds=12
+- **HTTPS Only**: Secure cookie flags, HSTS headers
+- **Rate Limiting**: 100 requests/minute per IP, 1000 per user
+- **CORS**: Whitelist specific origins only
+
+### 9.2 Data Protection
+
+- **Input Validation**: Pydantic models for all endpoints
+- **SQL Injection Prevention**: Parameterized queries only
+- **XSS Protection**: Content Security Policy headers, output encoding
+- **API Key Security**: NewsAPI/Gemini keys in environment variables only
+
+### 9.3 Error Handling
+
+- **Graceful Degradation**: If NewsAPI fails, show cached data with warning
+- **User-Friendly Errors**: No stack traces exposed to frontend
+- **Logging**: Structured logging (JSON format) for debugging
+- **Health Checks**: `/health` endpoint for monitoring
+
+---
+
+## 10. UI/UX Detailed Specifications
+
+### 10.1 Micro-interactions
+
+| Element | Trigger | Animation | Duration |
+|---------|---------|-----------|----------|
+| **Card Hover** | Mouse enter | Lift + shadow increase | 300ms ease-out |
+| **Button Click** | Mouse down | Scale 0.95 | 100ms |
+| **Data Load** | API response | Skeleton → Content fade | 400ms |
+| **New Alert** | WebSocket message | Slide in from right + pulse | 500ms |
+| **Chart Update** | Data change | Smooth path transition | 750ms |
+| **Page Transition** | Route change | Fade + slight slide up | 300ms |
+
+### 10.2 Responsive Breakpoints
+
+| Breakpoint | Width | Layout Changes |
+|------------|-------|----------------|
+| Mobile | < 640px | Single column, collapsible sidebar, touch gestures |
+| Tablet | 640-1024px | 2-column grid, persistent mini-sidebar |
+| Desktop | > 1024px | Full layout, hover interactions, keyboard shortcuts |
+
+### 10.3 Accessibility (WCAG 2.1 AA)
+
+- **Color Contrast**: Minimum 4.5:1 for normal text
+- **Focus Indicators**: Visible focus rings on all interactive elements
+- **Screen Readers**: ARIA labels, semantic HTML, alt text for charts
+- **Keyboard Navigation**: Full functionality without mouse
+- **Reduced Motion**: Respect `prefers-reduced-motion` media query
+
+---
+
+## 11. Implementation Roadmap
+
+### Phase 1: Foundation (Week 1-2)
+- [ ] Migrate Flask → FastAPI
+- [ ] Setup SQLite with WAL mode and indexes
+- [ ] Implement JWT authentication
+- [ ] Create base UI components (cards, buttons, inputs)
+
+### Phase 2: Core Features (Week 3-4)
+- [ ] Dashboard layout with CSS Grid
+- [ ] Integrate Chart.js with sample data
+- [ ] News feed with infinite scroll
+- [ ] Sentiment analysis pipeline (NLTK)
+
+### Phase 3: Polish (Week 5-6)
+- [ ] Glassmorphism design implementation
+- [ ] GSAP animations and page transitions
+- [ ] Dark mode toggle
+- [ ] Mobile responsiveness
+
+### Phase 4: Intelligence (Week 7-8)
+- [ ] Gemini API integration for insights
+- [ ] Slack webhook alerts
+- [ ] Watchlists and personalization
+- [ ] Data export functionality
+
+### Phase 5: Optimization (Week 9-10)
+- [ ] Performance optimization (caching, lazy loading)
+- [ ] Error handling and logging
+- [ ] Security audit
+- [ ] Documentation and deployment
+
+---
+
+## 12. Success Metrics
+
+| Category | Metric | Target |
+|----------|--------|--------|
+| **Performance** | Lighthouse Performance Score | > 90 |
+| **Reliability** | Uptime | 99.9% |
+| **User Experience** | Time to First Insight | < 5 seconds |
+| **Accuracy** | Sentiment Precision | > 85% |
+| **Engagement** | Session Duration | > 3 minutes |
+| **Code Quality** | Test Coverage | > 70% |
+
+---
+
+## 13. Appendices
+
+### A. Tech Stack Justification
+
+- **FastAPI**: Modern, fast, automatic docs—perfect for student projects needing to impress
+- **SQLite**: Zero configuration, single-file deployment, sufficient for demo data
+- **Vanilla JS**: No build step complexity, full control over performance
+- **Chart.js**: Perfect balance of features vs. bundle size (much lighter than D3)
+- **Tailwind**: Rapid styling without leaving HTML, consistent design system
+
+### B. Design Inspiration
+
+- **Glassmorphism**: Apple macOS Big Sur, Microsoft Fluent Design
+- **Dashboard Layout**: Linear.app, Vercel Dashboard, Stripe Dashboard
+- **Animations**: Apple product pages, Airbnb interactions
+
+### C. File Structure
+
+```
+project/
+├── app/
+│   ├── __init__.py
+│   ├── main.py              # FastAPI app
+│   ├── auth.py              # JWT handling
+│   ├── database.py          # SQLite connection
+│   ├── models.py            # Pydantic models
+│   ├── services/
+│   │   ├── news_service.py
+│   │   ├── sentiment_service.py
+│   │   └── ai_service.py
+│   └── routers/
+│       ├── auth.py
+│       ├── dashboard.py
+│       └── articles.py
+├── static/
+│   ├── css/
+│   │   └── styles.css       # Tailwind + custom
+│   ├── js/
+│   │   ├── app.js           # SPA router
+│   │   ├── charts.js        # Chart.js config
+│   │   └── api.js           # API client
+│   └── assets/
+│       └── images/
+├── templates/
+│   └── index.html           # Single Page App shell
+├── data/
+│   └── intelligence.db      # SQLite database
+├── tests/
+├── requirements.txt
+└── README.md
+```
+
+---
+
+This PRD balances **ambitious visual design** with **practical implementation** suitable for a student project. The focus is on creating a **portfolio-worthy application** that demonstrates modern web development skills while remaining maintainable and deployable on free tiers (Render, Vercel, SQLite).

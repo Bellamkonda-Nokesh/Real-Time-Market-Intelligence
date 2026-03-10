@@ -1,0 +1,4 @@
+﻿client/src/hooks/use-watchlists.ts(2,30): error TS2305: Module '"@shared/routes"' has no exported member 'InsertWatchlist'.
+client/src/pages/news-feed.tsx(218,56): error TS2741: Property 'children' is missing in type '{ key: number; className: string; }' but required in type 'GlassCardProps'.
+client/src/pages/watchlists.tsx(135,22): error TS2741: Property 'children' is missing in type '{ key: number; className: string; }' but required in type 'GlassCardProps'.
+server/routes.ts(74,23): error TS2802: Type 'Set<any>' can only be iterated through when using the '--downlevelIteration' flag or with a '--target' of 'es2015' or higher.

@@ -2,40 +2,53 @@ import { useQuery } from "@tanstack/react-query";
 import { api } from "@shared/routes";
 import { z } from "zod";
 
-function parseWithLogging<T>(schema: z.ZodSchema<T>, data: unknown, label: string): T {
-  const result = schema.safeParse(data);
-  if (!result.success) {
-    console.error(`[Zod] ${label} validation failed:`, result.error.format());
-    return data as T; // Fallback to raw data to prevent hard crash
-  }
-  return result.data;
-}
+const DashboardStatsSchema = z.object({
+  totalArticles: z.number(),
+  avgSentiment: z.number(),
+  activeAlerts: z.number(),
+  positiveCount: z.number(),
+  negativeCount: z.number(),
+  neutralCount: z.number(),
+  trendDirection: z.string(),
+  trendingKeywords: z.array(z.object({ text: z.string(), value: z.number() })),
+});
+
+type DashboardStats = z.infer<typeof DashboardStatsSchema>;
+
+const MOCK_STATS: DashboardStats = {
+  totalArticles: 0,
+  avgSentiment: 0,
+  activeAlerts: 0,
+  positiveCount: 0,
+  negativeCount: 0,
+  neutralCount: 0,
+  trendDirection: "stable",
+  trendingKeywords: [],
+};
 
 export function useDashboardStats() {
-  return useQuery({
+  return useQuery<DashboardStats>({
     queryKey: [api.dashboard.stats.path],
     queryFn: async () => {
       const res = await fetch(api.dashboard.stats.path, { credentials: "include" });
       if (!res.ok) {
-        // Provide mock fallback if endpoint missing
-        if (res.status === 404) {
-          return {
-            totalArticles: 12453,
-            avgSentiment: 0.68,
-            activeAlerts: 4,
-            trendingKeywords: [
-              { text: "AI", value: 98 },
-              { text: "Earnings", value: 85 },
-              { text: "Merger", value: 64 },
-              { text: "Interest Rates", value: 55 },
-              { text: "Tech", value: 42 }
-            ]
-          };
-        }
+        if (res.status === 404) return MOCK_STATS;
         throw new Error("Failed to fetch dashboard stats");
       }
       const data = await res.json();
-      return parseWithLogging(api.dashboard.stats.responses[200], data, "dashboard.stats");
+      const parsed = DashboardStatsSchema.safeParse(data);
+      return parsed.success ? parsed.data : (data as DashboardStats);
+    },
+  });
+}
+
+export function useArticles() {
+  return useQuery({
+    queryKey: [api.articles.list.path],
+    queryFn: async () => {
+      const res = await fetch(api.articles.list.path, { credentials: "include" });
+      if (!res.ok) throw new Error("Failed to fetch articles");
+      return res.json();
     },
   });
 }
