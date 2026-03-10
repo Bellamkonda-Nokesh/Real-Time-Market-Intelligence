@@ -11,35 +11,63 @@
 
 <br />
 
-![Sentix Dashboard Preview](./docs/dashboard.png)
+<div align="center">
+  <!-- Image 1: Landing Page -->
+  ![Sentix Landing Page](./docs/landing.png)
+  <br />
+  <i>Transforming the firehose of global financial news into actionable, real-time insights with a production-ready "Glass Intelligence" architecture.</i>
+</div>
 
 ---
 
-## 📖 The Problem
+## ⚡ Executive Summary
 
-**Imagine trying to drink from a firehose of global financial news.** Every second, countless articles, earnings reports, and market gossip hit the wire. For retail investors and analysts, the sheer volume of unstructured data makes it impossible to manually gauge the *actual* mood of the market. Is the overall trajectory bullish or bearish? Are news outlets skewing a specific narrative about NVIDIA or the Federal Reserve? 
+**Sentix v2.0** (Real-Time Industry Insight & Strategic Intelligence System) is an autonomous intelligence platform that reads the news so you don't have to. Evolving from a Flask-based academic prototype into a polished, production-ready web application, it features zero-downtime reliability, lightning-fast initial loads (< 2s), and a modern glassmorphism UI running smooth 60fps animations.
 
-Without a way to quantify this noise, investors are left reacting to headlines rather than anticipating trends. We asked ourselves: *What if you could distill the entire financial news cycle into actionable data using Natural Language Processing (NLP)?*
+<details open>
+<summary><b>✨ Core Intelligence Capabilities</b></summary>
+<br>
 
-## 💡 The Solution
+- 🌐 **Real-Time News Feed**: Actively fetches and filters live articles using NewsAPI. Supports advanced search by keyword, topic, or sentiment.
+- 🧠 **NLTK Sentiment Analysis**: High-accuracy NLP engine that instantly scores every headline and article (Positive, Negative, Neutral) with precision confidence intervals.
+- 📈 **Trend Forecasting**: Visual trend analysis employing Chart.js to map sentiment volume and trajectory over 7-day timelines.
+- ☁️ **Trending Word Cloud**: Real-time extraction of the most frequently mentioned keywords across all processed news stories.
+- 🚨 **Real-Time Slack Alerts**: Webhook integration to immediately notify you of significant sentiment shifts on monitored entities.
+- 📊 **Data Export (CSV/JSON)**: Downstream your raw scraped data and sentiment values directly into secondary modeling engines.
 
-Enter **Sentix**. We built an autonomous intelligence platform that reads the news so you don't have to. 
-
-Sentix acts as your personal market radar. By seamlessly hooking into live global news streams, it ingests, processes, and grades hundreds of articles on a continuous feed. Our NLP engine scores each headline and article body to assign it a precise sentiment weight. 
-
-Instead of reading 100 articles, you can glance at your Sentix dashboard and immediately see:
-1. **The Pulse**: A breakdown of bullish vs. bearish market momentum.
-2. **The Predictions**: A 7-Day algorithmic forecast of where sentiment is heading using linear regression models.
-3. **The Bias**: A leaderboard decoding which specific news sources are consistently spinning positive or negative narratives.
-
-Sentix transforms paralyzing information overload into a sleek, dark-mode command center.
+</details>
 
 ---
 
-## ✨ Dynamic Features
+## � Platform Tour
 
-![Features Preview](./docs/features.png)
-Built to analyze without the clutter. Uncover biases with our custom NLP engine, track multiple sources, and leverage the **Watchlist Alerts** to monitor your specific corporate portfolio.
+Immerse yourself in our "Glass Intelligence" UI design, featuring frosted glass cards, smooth GSAP transitions, and adaptive deep indigo themes. The platform is divided into three core analytical views:
+
+### 1. The Command Center (Market Overview)
+> *AI-powered real-time sentiment intelligence dashboard.*
+
+<!-- Image 2: Dashboard Overview -->
+![Market Overview](./docs/dashboard.png)
+
+Get an immediate pulse on the market. View the total articles processed today, the live aggregate sentiment (-1 to +1 scale), bullish signals, and active watchlists. Monitor the **30-Day Sentiment Trend** and the visual **Market Gauge** that breaks down the market into Positive, Neutral, and Negative. 
+
+### 2. Analytics Deep Dive
+> *Granular sentiment analytics, bias detection, and source tracking.*
+
+<!-- Image 3: Analytics Deep Dive -->
+![Analytics Deep Dive](./docs/analytics.png)
+
+Built to analyze without the clutter. Explore the **Sentiment Distribution** through intuitive donut charts. Uncover biases with the **Source Leaderboard** to see exactly which publications are leaning bullish or bearish on your tracked topics.
+
+### 3. AI Insights & Forecasting
+> *Synthesizing the noise into clear predictions and summaries.*
+
+<!-- Image 4: Forecasting & Insights -->
+![AI Insights & Trends](./docs/insights.png)
+
+- **7-Day Sentiment Forecast**: Visualizing mathematical regression on sentiment data to project market direction.
+- **AI Market Summary (NLP Report)**: A synthesized narrative text overview of market conditions automatically extracted from dozens of breaking articles. 
+- **Trending Topics**: A beautiful hovering word cloud of the most mentioned keywords across all processed intelligence.
 
 ---
 
