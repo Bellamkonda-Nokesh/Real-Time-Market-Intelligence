@@ -20,19 +20,19 @@
 ## 🖼️ Platform Preview
 
 ### Landing Page — *The First Impression*
-![Sentix Landing Page](./landing.png)
+![Sentix Landing Page](docs/landing.png)
 > A bold glassmorphism hero — live news ingestion, NLP sentiment scoring, 7-day forecasting, and beautiful analytics, unified into one intelligence platform.
 
 ---
 
 ### Feature Suite — *Everything in One Place*
-![Sentix Features](./features.png)
+![Sentix Features](docs/features.png)
 > Six production-grade modules covering the full intelligence pipeline: from multi-source news ingestion and AI sentiment scoring to live text analysis and entity watchlist alerts.
 
 ---
 
 ### Market Overview Dashboard — *Your Command Center*
-![Sentix Dashboard](./dashboard.png)
+![Sentix Dashboard](docs/dashboard.png)
 > Real-time pulse on the market. Articles scanned, live aggregate sentiment, bullish signal count, a 30-day trend line chart, and a visual market gauge — all live, all in one view.
 
 ---
