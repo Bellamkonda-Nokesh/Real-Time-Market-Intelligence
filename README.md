@@ -153,7 +153,6 @@ sentix/
 
 ## 🗺️ Roadmap
 
-- [ ] GPT-4 powered article summarization
 - [ ] Portfolio sentiment correlation scoring
 - [ ] Multi-language support (EN, DE, ZH)
 - [ ] Redis caching for sub-100ms API responses
