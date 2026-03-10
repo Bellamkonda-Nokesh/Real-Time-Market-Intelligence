@@ -11,7 +11,7 @@
 
 <br />
 
-![Sentix Dashboard Preview](./dashboard.png)
+![Sentix Dashboard Preview](docs/dashboard.png)
 
 ---
 
