@@ -11,7 +11,7 @@
 
 <br />
 
-![Sentix Dashboard Preview](https://via.placeholder.com/1200x600/1e293b/ffffff?text=Insert+Dashboard+Screenshot+Here)
+![Sentix Dashboard Preview](./docs/dashboard.png)
 
 ---
 
@@ -38,7 +38,7 @@ Sentix transforms paralyzing information overload into a sleek, dark-mode comman
 
 ## ✨ Dynamic Features
 
-![Features Preview](https://via.placeholder.com/1200x600/1e293b/ffffff?text=Insert+Features+Showcase+Here)
+![Features Preview](./docs/features.png)
 
 - � **Mass News Ingestion**: Actively pulls 30+ simultaneous articles directly from [NewsAPI](https://newsapi.org) triggered by your custom search queries.
 - 🧠 **NLP Sentiment Engine**: VADER-inspired logic that computes confidence intervals and scores text as Positive, Negative, or Neutral.
