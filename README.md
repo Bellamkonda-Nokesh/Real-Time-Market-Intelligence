@@ -26,7 +26,7 @@
 ---
 
 ### Feature Suite — *Everything in One Place*
-![Sentix Features](./features.png)
+![Sentix Features](docs/features.png)
 > Six production-grade modules covering the full intelligence pipeline: from multi-source news ingestion and AI sentiment scoring to live text analysis and entity watchlist alerts.
 
 ---
