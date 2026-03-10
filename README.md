@@ -39,35 +39,25 @@
 
 ---
 
-## � Platform Tour
+## 📸 Platform Tour
 
-Immerse yourself in our "Glass Intelligence" UI design, featuring frosted glass cards, smooth GSAP transitions, and adaptive deep indigo themes. The platform is divided into three core analytical views:
+Immerse yourself in our "Glass Intelligence" UI design, featuring frosted glass cards, smooth GSAP transitions, and adaptive deep indigo themes.
 
-### 1. The Command Center (Market Overview)
+### 1. Comprehensive Feature Set
+> *Everything you need to stay ahead: A complete platform for market intelligence, from raw news to actionable insights.*
+
+<!-- Image 2: Features Grid -->
+![Sentix Features](./docs/features.png)
+
+Explore our core capabilities out-of-the-box. Sentix offers **Multi-Source News** ingestion, deep **AI Sentiment Analysis** computing instant positivity, and mathematically backed **7-Day Forecasting**. Ensure you know exactly who's spinning the story using the **Source Leaderboard**, test any text instantly with the **Live Analyzer**, and get pinged precisely when sentiment drops via **Watchlist Alerts**.
+
+### 2. The Command Center (Market Overview)
 > *AI-powered real-time sentiment intelligence dashboard.*
 
-<!-- Image 2: Dashboard Overview -->
+<!-- Image 3: Dashboard Overview -->
 ![Market Overview](./docs/dashboard.png)
 
-Get an immediate pulse on the market. View the total articles processed today, the live aggregate sentiment (-1 to +1 scale), bullish signals, and active watchlists. Monitor the **30-Day Sentiment Trend** and the visual **Market Gauge** that breaks down the market into Positive, Neutral, and Negative. 
-
-### 2. Analytics Deep Dive
-> *Granular sentiment analytics, bias detection, and source tracking.*
-
-<!-- Image 3: Analytics Deep Dive -->
-![Analytics Deep Dive](./docs/analytics.png)
-
-Built to analyze without the clutter. Explore the **Sentiment Distribution** through intuitive donut charts. Uncover biases with the **Source Leaderboard** to see exactly which publications are leaning bullish or bearish on your tracked topics.
-
-### 3. AI Insights & Forecasting
-> *Synthesizing the noise into clear predictions and summaries.*
-
-<!-- Image 4: Forecasting & Insights -->
-![AI Insights & Trends](./docs/insights.png)
-
-- **7-Day Sentiment Forecast**: Visualizing mathematical regression on sentiment data to project market direction.
-- **AI Market Summary (NLP Report)**: A synthesized narrative text overview of market conditions automatically extracted from dozens of breaking articles. 
-- **Trending Topics**: A beautiful hovering word cloud of the most mentioned keywords across all processed intelligence.
+Get an immediate pulse on the market. View the total articles processed today, the live aggregate sentiment (-1 to +1 scale), bullish signals, and active watchlists. Monitor the **30-Day Sentiment Trend** line chart and the visual **Market Gauge** that breaks down the market directly into Positive, Neutral, and Negative segments.
 
 ---
 
