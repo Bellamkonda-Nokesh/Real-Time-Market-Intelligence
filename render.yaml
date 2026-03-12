@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: sentix-intelligence-platform
+    name: marketnexus-ai
     runtime: node
     plan: free
     buildCommand: npm install && npm run build
@@ -15,13 +15,13 @@ services:
         generateValue: true
       - key: DATABASE_URL
         fromDatabase:
-          name: sentix-db
+          name: marketnexus-ai-db
           property: connectionString
       - key: NEWS_API_KEY
         sync: false   # You will paste this manually in Render dashboard
 
 databases:
-  - name: sentix-db
-    databaseName: sentix_db
-    user: sentix_user
+  - name: marketnexus-ai-db
+    databaseName: marketnexus_ai_db
+    user: marketnexus_user
     plan: free
