@@ -129,7 +129,7 @@ npm run db:push
 npm run dev
 ```
 
-Open **[http://localhost:5000](http://localhost:5000)** — your intelligence platform is live.
+Open **[http://localhost:5000](https://marketnexus-ai.onrender.com/)** — your intelligence platform is live.
 
 ---
 
