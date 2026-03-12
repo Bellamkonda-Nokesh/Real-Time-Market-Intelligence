@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: sentix-intelligence-platform
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: sentix-db
+          property: connectionString
+      - key: NEWS_API_KEY
+        sync: false   # You will paste this manually in Render dashboard
+
+databases:
+  - name: sentix-db
+    databaseName: sentix_db
+    user: sentix_user
+    plan: free
